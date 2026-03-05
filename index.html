@@ -1,1 +1,129 @@
-<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Feirão Especial</title> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"> <style> body{ margin:0; font-family:'Poppins',sans-serif; background:linear-gradient(180deg,#ff2e63,#ff4f7b,#ff6b8f); color:#333; } /* TOPO */ .hero{ text-align:center; padding:40px 20px; } .hero h1{ margin:0; font-size:50px; font-weight:800; color:#FFD700; letter-spacing:2px; text-shadow:0 4px 10px rgba(0,0,0,0.3); } /* CARD */ .card{ max-width:480px; margin:auto; background:white; padding:30px; border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,0.2); text-align:center; } /* TIMER */ .timer{ font-size:40px; font-weight:800; color:#ff2e63; margin:10px 0; } /* ALERTA */ .alert{ background:#ffe5ec; color:#c9184a; padding:10px; border-radius:10px; font-size:14px; font-weight:600; } /* ONLINE */ .online{ margin-top:10px; font-size:14px; color:#ff2e63; } /* PROGRESSO */ .progress-box{ margin-top:20px; height:12px; background:#eee; border-radius:20px; overflow:hidden; } .progress{ height:100%; width:0%; background:linear-gradient(90deg,#ff2e63,#ff8fab); } /* BENEFICIOS */ .benefits{ margin-top:20px; text-align:left; font-size:15px; } .benefits div{ margin-bottom:8px; } /* BOTAO */ .cta{ margin-top:25px; display:block; background:linear-gradient(90deg,#ff2e63,#ff4f7b); color:white; text-decoration:none; padding:18px; border-radius:12px; font-weight:700; font-size:18px; box-shadow:0 10px 25px rgba(255,0,90,0.4); } .cta:hover{ transform:scale(1.05); } </style> </head> <body> <div class="hero"> <h1>FEIRÃO</h1> </div> <div class="card"> <div class="timer" id="timer">03:00</div> <div class="alert"> ⚠️ Últimas vagas disponíveis </div> <div class="online" id="online"> 👥 132 pessoas vendo agora </div> <div class="progress-box"> <div class="progress" id="progress"></div> </div> <div class="benefits"> <div>✔ Desconto liberado hoje</div> <div>✔ Acesso imediato</div> <div>✔ Oferta exclusiva</div> </div> <a class="cta" href="https://keen-brioche-cd458a.netlify.app/"> GARANTIR DESCONTO </a> </div> <script> /* PROGRESSO */ let percent = 0 const progress = document.getElementById("progress") setInterval(()=>{ percent++ progress.style.width = percent+"%" if(percent>=100) percent=0 },40) /* TIMER */ let time = 180 const timer = document.getElementById("timer") setInterval(()=>{ let min = Math.floor(time/60) let sec = time%60 timer.innerText = (min<10?"0":"")+min+":"+ (sec<10?"0":"")+sec if(time>0) time-- },1000) /* ONLINE */ const online = document.getElementById("online") setInterval(()=>{ let num = Math.floor(Math.random()*60)+120 online.innerText="👥 "+num+" pessoas vendo agora" },3000) </script> </body> </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Feirão Especial</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#ff0f4b,#ff4b4b);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:flex-start;
+height:100vh;
+color:white;
+text-align:center;
+}
+
+/* TOPO */
+
+.topo{
+width:100%;
+background:linear-gradient(90deg,#b4003a,#ff0066);
+padding:25px 10px;
+box-shadow:0 4px 20px rgba(0,0,0,0.2);
+}
+
+.topo h1{
+font-size:40px;
+font-weight:800;
+letter-spacing:3px;
+color:#ffd43b;
+text-shadow:0 4px 10px rgba(0,0,0,0.4);
+}
+
+/* CONTEÚDO */
+
+.container{
+margin-top:40px;
+width:90%;
+max-width:400px;
+}
+
+.logo{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* TEXTO */
+
+.texto{
+margin-top:25px;
+font-size:18px;
+font-weight:500;
+}
+
+/* BOTÃO */
+
+.botao{
+margin-top:30px;
+display:inline-block;
+background:#ffd43b;
+color:#000;
+padding:16px 35px;
+border-radius:50px;
+font-weight:700;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+box-shadow:0 6px 20px rgba(0,0,0,0.3);
+}
+
+.botao:hover{
+transform:scale(1.05);
+background:white;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.topo h1{
+font-size:34px;
+}
+
+.texto{
+font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topo">
+<h1>FEIRÃO</h1>
+</div>
+
+<div class="container">
+
+<img src="sua-imagem.png" class="logo">
+
+<div class="texto">
+Grandes ofertas disponíveis agora
+</div>
+
+<a href="#" class="botao">
+VER OFERTAS
+</a>
+
+</div>
+
+</body>
+</html>
